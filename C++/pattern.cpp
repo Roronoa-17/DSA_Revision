@@ -234,13 +234,167 @@ void print18(int n)
 {
     for(int i = 0; i < n; i++)
     {
-        for(char j='E'; j<= i; j++)
+        for(char ch = 'E' - i; ch<='E'; ch++)
         {
-            cout<<;
+            cout<<ch;
         }
         cout<<endl;
     }
 }
+
+void print19(int n)
+{
+    for(int i=0; i < n; i++)
+    {
+        for(int j=0; j < n-i ; j++)
+        {
+            cout<<"*";
+        }
+        for(int j=0; j<2*i; j++)
+        {
+            cout<<" ";
+        }
+        for(int j=0; j < n-i; j++)
+        {
+            cout<<"*";
+        }
+        cout<<endl; 
+    }
+}
+
+void print19a(int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<=i; j++)
+        {
+            cout<<"*";
+        }
+        for(int j=0; j<2*n-(2*i+2); j++)
+        {
+            cout<<" ";
+        }
+        for(int j=0; j<=i; j++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+
+// Actual logic for pattern19
+void print19ac(int n)
+{
+    int IS = 0;
+    for(int i=0; i<n; i++)
+    {
+        for(int j=1; j<=n-i; j++)
+        {
+            cout<<"*";
+        }
+        for(int j=0; j<IS; j++)
+        {
+            cout<<" ";
+        }
+        for(int j=1; j<=n-i; j++)
+        {
+            cout<<"*";
+        }
+        IS+=2;
+        cout<<endl;
+    }
+    IS=8;
+    for(int i=1; i<=n; i++)
+    {
+        for(int j=1; j<=i; j++)
+        {
+            cout<<"*";
+        }
+        for(int j=0; j<IS; j++)
+        {
+            cout<<" ";
+        }
+        for(int j=1; j<=i; j++)
+        {
+            cout<<"*";
+        }
+        IS-=2;
+        cout<<endl;
+    }
+}
+
+void print20(int n)
+{
+    int IS = 8;
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<=i; j++)
+        {
+            cout<<"*";
+        }
+        for(int j=IS; j>0; j--)
+        {
+            cout<<" ";
+        }
+        for(int j=0; j<=i; j++)
+        {
+            cout<<"*";
+        }
+        IS-=2;
+        cout<<endl;
+    }
+    IS=2;
+    for(int i=1; i<=n; i++)
+    {
+        
+        for(int j=0; j<n-i; j++)
+        {
+            cout<<"*";
+        }
+        for(int j=0; j<IS; j++)
+        {
+            cout<<" ";
+        }
+        for(int j=0; j<n-i; j++)
+        {
+            cout<<"*";
+        }
+        IS+=2;
+        cout<<endl;
+    }
+}
+
+void print21(int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            if(i==0 || j==0 || i==n-1 || j==n-1)
+            {
+                cout<<"*";
+            }
+                else cout<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+void print22(int n)
+{
+    for(int i=0; i<2*n-1;i++)
+    {
+        for(int j=0; j<2*n-1;j++)
+        {
+            int top = i;
+            int left = j;
+            int right = (2*n - 2) - j;
+            int down = (2*n - 2) - i;
+            cout<< (n - min(min(top, down), min(left,right)));
+        }
+        cout<<endl;
+    }
+}   
 
 int main()
 {
@@ -250,8 +404,7 @@ int main()
     {
         int n;
         cin>>n;
-        print18(n);
+        print22(n);
     }
-
     return 0;
 }

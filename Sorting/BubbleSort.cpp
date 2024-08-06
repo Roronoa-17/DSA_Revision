@@ -18,7 +18,7 @@ void bubble_sort(int arr[], int n)
         }
         if(swap == 0)
         {
-            break;
+            break; 
         }
 
     }

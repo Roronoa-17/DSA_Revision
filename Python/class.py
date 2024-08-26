@@ -1,17 +1,16 @@
 class Person:
-    name = "Harry"
-    occupation = "Software Developer"
+    
+    def __init__(self, name, occupation):
+        print("Hey I am a Person")
+        self.name = name
+        self.occupation = occupation
     networth = 10
     def info(self):
         print(f"{self.name} is a {self.occupation}")
 
 
-a = Person()
-b = Person()
-a.name = "Shubham"
-a.occupation = "Accountant"
+a = Person("Shubham", "Developer")
+b = Person("Divya", "HR")
 
-b.name = "Nikita"
-b.occupation = "HR"
 a.info()
 b.info()
